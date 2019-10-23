@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-	<ul>
-		<% for(let i=0; i<data.length; i++) { %>
-		<li>
-			<%= data[i].name %>
-		</li>
-		<li>
-			<%= data[i].schedule %>
-		</li>
-		<li>
-			<%= data[i].status %>
-		</li>
-		<li>
-			<%= data[i].price %>
-		</li>
-		<li>
-			<%= data[i].venue %>
-		</li>
-	 <% } %>
-	</ul>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <%- include('./partials/meta') %>
+    <!-- Bootstrap CSS -->
+    <%- include('./partials/css') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar') %>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include('./partials/script') %>
+  </body>
 </html>
