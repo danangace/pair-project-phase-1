@@ -3,12 +3,24 @@
     "name": "Danang",
     "email": "danangace@gmail.com",
     "password": "danangganteng123",
-    "phone": "0857243413"
+    "phone": "0857243413",
+    "gender": "male",
+    "login_status": "0"
   },
   {
     "name": "Hengki",
     "email": "hengki01@gmail.com",
     "password": "adadeh",
-    "phone": "0822359585"
+    "phone": "0822359585",
+    "gender": "male",
+    "login_status": "0"
+  },
+   {
+    "name": "Nadia",
+    "email": "nadia@gmail.com",
+    "password": "bungacantik",
+    "phone": "087564656",
+    "gender": "female",
+    "login_status": "0"
   }
 ]

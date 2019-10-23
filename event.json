@@ -14,5 +14,13 @@
     "price": "300000",
     "stock": "1500",
     "venue": "ICE BSD"
+  },
+  {
+    "name": "Konser WestLife",
+    "schedule": "2019-01-12",
+    "status": "open",
+    "price": "200000",
+    "stock": "1500",
+    "venue": "Jakabaring Palembang"
   }
 ]
