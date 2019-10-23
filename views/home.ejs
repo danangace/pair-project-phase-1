@@ -4,24 +4,51 @@
 	<title>Home</title>
 </head>
 <body>
-	<ul>
 		<% for(let i=0; i<data.length; i++) { %>
-		<li>
-			<%= data[i].name %>
-		</li>
-		<li>
-			<%= data[i].schedule %>
-		</li>
-		<li>
-			<%= data[i].status %>
-		</li>
-		<li>
-			<%= data[i].price %>
-		</li>
-		<li>
-			<%= data[i].venue %>
-		</li>
+		<ul>
+			<li>
+				<%= data[i].name %>
+			</li>
+			<li>
+				<%= data[i].schedule %>
+			</li>
+			<li>
+				<%= data[i].status %>
+			</li>
+			<li>
+				<%= data[i].price %>
+			</li>
+			<li>
+				<%= data[i].venue %>
+			</li>
+		</ul>
 	 <% } %>
-	</ul>
+
+	 <!-- Sign Up -->
+	<h3>Sign Up</h3>
+	<form method="post" action="/customers/signUp">
+		<label>Name</label> <br>
+		<input type="text" name="name">  <br>
+		<label>Email</label>  <br>
+		<input type="email" name="email">  <br>
+		<label>Password</label> <br>
+		<input type="password" name="password"> <br>
+		<label>Phone</label> <br>
+		<input type="number" name="phone"> <br>
+		<label>Gender</label> <br>
+		<input type="text" name="gender"> <br>
+		<input type="submit" name="submit">
+	</form>
+		
+		<!-- Login -->
+	<h3>Login</h3>
+	<form method="post" action="/customers/logIn">
+		<label>Email</label> <br>
+		<input type="email" name="email"> <br>
+		<label>Password</label> <br>
+		<input type="password" name="password"> <br>
+		<input type="submit" name="submit">
+	</form>
+
 </body>
 </html>

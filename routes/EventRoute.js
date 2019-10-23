@@ -8,7 +8,7 @@ routes.get('/', (req, res) => {
 	Event.findAll()
 	.then((data) => {
 		data = data.map(item => item.dataValues);
-		console.log({data});
+		//console.log('ini data event: ', {data});
 		res.render('home', {data});
 	})
 	.catch((err) => {
