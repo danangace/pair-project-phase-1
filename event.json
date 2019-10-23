@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Konser BlackPink",
+    "schedule": "2019-11-11",
+    "status": "open",
+    "price": "500000",
+    "stock": "1000",
+    "venue": "ICE BSD"
+  },
+  {
+    "name": "Konser BigBang",
+    "schedule": "2019-12-12",
+    "status": "open",
+    "price": "300000",
+    "stock": "1500",
+    "venue": "ICE BSD"
+  }
+]
