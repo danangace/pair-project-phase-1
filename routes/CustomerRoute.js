@@ -4,22 +4,43 @@ const Event = require('../models').Event;
 const CustomerEvent = require('../models').CustomerEvent;
 
 routes.post('/signUp', (req, res) => {
-	console.log('routes.post(/signUp: ', req.body) //{ email: [ 'Alif', 'alif@gmail.com', 'alif', '0234234' ], password: 'Male', submit: 'Submit' }
-	Customer.create({
-		name: req.body.name,
-		email: req.body.email,
-		password: req.body.password,
-		phone: req.body.phone,
-		gender: req.body.gender,
-		login_status: 0})
-	.then((data) => {
-		let customer = data.dataValues;
-		console.log({customer});
-		res.redirect(`${customer.id}/edit`);
+	console.log('routes.post(/signUp: ', req.body)
+	   // { id: 46,
+    //  name: 'sdgdg',
+    //  email: 'hengki01@gmail.com',
+    //  password: 'sdfsdf',
+    //  phone: '2434',
+    //  gender: 'sdfd',
+    //  login_status: false,
+    //  createdAt: 2019-10-23T08:32:53.610Z,
+    //  updatedAt: 2019-10-23T08:32:53.610Z } }
+	Customer.findAll({where: {email: req.body.email}})
+	.then(data => {
+		console.log('cek email customer pas sign up: ', data);
+		if(data.length == 0) {
+			return Customer.create({
+				name: req.body.name,
+				email: req.body.email,
+				password: req.body.password,
+				phone: req.body.phone,
+				gender: req.body.gender,
+				login_status: 0
+			})
+		} else {
+			
+		}
 	})
+		.then((data) => {
+			let customer = data.dataValues;
+			console.log({customer});
+			res.redirect(`${customer.id}/edit`);
+		})
+		.catch((err) => {
+			res.send(err);
+		})
 	.catch((err) => {
-		res.send(err);
-	})
+			res.send(err);
+		})
 })
 
 routes.post('/logIn', (req, res) => {
