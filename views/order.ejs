@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Form</title>
+</head>
+<body>
+	<ul>
+		<li> <%= event.id %> </li>
+		<li> <%= event.schedule %> </li>
+		<li> <%= event.status %> </li>
+		<li> <%= event.price %> </li>
+		<li> <%= event.stock %> </li>
+		<li> <%= event.venue %> </li>
+	</ul>
+
+	<form method="POST" action="/events/<%= event.id %>/order">
+		<label>Quantity</label>
+		<input type="number" name="quantity">
+		<label>Email</label>
+		<input type="email" name="email">
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>
+
+<!-- 	// { id: 1,
+		//   name: 'Konser BlackPink',
+		//   schedule: 2019-11-11T00:00:00.000Z,
+		//   status: 'open',
+		//   price: 500000,
+		//   stock: 1000,
+		//   venue: 'ICE BSD',
+		//   createdAt: 2019-10-23T03:26:41.311Z,
+		//   updatedAt: 2019-10-23T03:26:41.311Z } -->
