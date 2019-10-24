@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <%- include('./partials/meta') %>
+    <%- include('../partials/meta') %>
     <!-- Bootstrap CSS -->
-    <%- include('./partials/css') %>
+    <%- include('../partials/css') %>
   <style>
     .d-block.w-100{
       height: 100vh;
@@ -12,7 +12,26 @@
   </style>
   </head>
   <body>
-    <%- include('./partials/navbar') %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Event
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Concert</a>
+                  <a class="dropdown-item" href="#">Conference</a>
+                  <a class="dropdown-item" href="#">Workshop</a>
+          </li>
+        </ul>
+          <p>Welcome <%= customer.name %></p>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 0px 5px;" type="button" data-toggle="modal" data-target=".bd-example-modal-lg-1">Edit Profile</button>
+      </div>
+    </nav>
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -44,14 +63,14 @@
               <div class="modal-content">
                 <div class='container' style="margin: 20px 0px;">
                   <h2>Login</h2>
-                  <form method="post" action="/customers/logIn">
+                  <form>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -63,7 +82,6 @@
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class='container' style="margin: 20px 0px;">
-
                     <h2>Sign Up</h2>
                     <form method="post" action="/customers/signUp">
                         <div class="form-group">
@@ -95,7 +113,7 @@
             </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <%- include('./partials/script') %>
+    <%- include('../partials/script') %>
     <script>
       $('.carousel').carousel({
           interval: 2000

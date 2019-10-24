@@ -21,6 +21,7 @@ routes.post('/signUp', (req, res) => {
 	})
 })
 
+// redirect to user profile
 routes.get('/:id/edit', (req, res) => {
 	Customer.findByPk(req.params.id)
 	.then((data) => {
@@ -29,13 +30,26 @@ routes.get('/:id/edit', (req, res) => {
 	})
 })
 
+// after submit
+routes.post('/:id/edit', (req, res) => {
+	Customer.update(req.body, {where: {id: req.params.id}})
+	.then(data => {
+		res.redirect('/');
+	})
+})
+
+// login
 routes.post('/logIn', (req, res) => {
+	console.log(req.body)
+	let customer;
 	Customer.findOne({where: {email: req.body.email, password: req.body.password}})
 	.then((data) => {
-		return Customer.update({login_status: 1}, {where: {id: data.dataValues.id}})
+		customer = data
+		return Customer.update({login_status: true}, {where: {id: data.dataValues.id}})
 	})
 		.then((data) => {
-			res.redirect('/');
+			console.log(customer)
+			res.render('customer/home', { customer });
 		})
 		.catch(err => {
 			res.send(err);
@@ -45,12 +59,7 @@ routes.post('/logIn', (req, res) => {
 	})
 })
 
-routes.post('/:id/edit', (req, res) => {
-	Customer.update(req.body, {where: {id: req.params.id}})
-	.then(data => {
-		res.redirect(`localhost:3000/`);
-	})
-})
+
 
 routes.get('/:id/delete', (req, res) => {
 	Customer.destroy({where: {id: req.params.id}})
