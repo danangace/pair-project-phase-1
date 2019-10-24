@@ -14,14 +14,23 @@ module.exports = {
       schedule: {
         type: Sequelize.DATE
       },
+      description: {
+        type: Sequelize.STRING
+      },
       status: {
         type: Sequelize.STRING
       },
       price: {
         type: Sequelize.INTEGER
       },
-      stock: {
+      maxSeats: {
         type: Sequelize.INTEGER
+      },
+      seats: {
+        type: Sequelize.INTEGER
+      },
+      image: {
+        type: Sequelize.STRING
       },
       venue: {
         type: Sequelize.STRING
