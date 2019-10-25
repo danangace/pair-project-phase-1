@@ -2,7 +2,9 @@
 const bcrypt = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Customer extends Model {}
+  class Customer extends Model {
+    
+  }
   Customer.init({
     name: DataTypes.STRING,
     email: {
@@ -32,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   },sequelize});
   Customer.associate = function(models) {
     // associations can be defined here
-    Customer.belongsToMany(models.Event, {through: 'CustomerEvent', foreignKey: 'CustomerId' })
+    Customer.belongsToMany(models.Event, {through: 'CustomerEvent'})
   };
   return Customer;
 };

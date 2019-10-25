@@ -44,7 +44,7 @@ class CustomerController{
             res.redirect('/home');
         })
     }
-//danang150403
+
     static login(req,res){
         let customer = {}
         Customer.findOne({where: {email: req.body.email}})
@@ -53,17 +53,18 @@ class CustomerController{
             let checkPassword = helper(req.body.password, data.password);
             console.log(checkPassword);
             if(checkPassword) {
-                console.log('2')
                 req.session.user = {
+                    id: data.id,
                     name: data.name,
                     email: data.email
                 }
+                console.log(req.session.user)
+                return Event.findAll()  
+            }else{
+                throw new Error('Error login')
             }
-            return Event.findAll()  
         })
         .then((events) => {
-            events = events.map(event => event.dataValues);
-            console.log({events: events});
             res.render('customer/home', {customer, events: events});
         })
         .catch(err => {

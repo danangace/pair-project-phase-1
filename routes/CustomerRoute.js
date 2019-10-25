@@ -10,6 +10,8 @@ routes.get('/:id/edit', CustomerController.edit);
 // after submit
 routes.post('/:id/edit', CustomerController.submitEdit);
 
+// routes.get('/:id', CustomerController.user)
+
 // login/read
 routes.post('/logIn', CustomerController.login);
 

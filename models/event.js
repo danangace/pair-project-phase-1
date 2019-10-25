@@ -1,7 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model;
-  class Event extends Model{}
+  class Event extends Model{
+    dateToString() {
+      return this.schedule.toISOString().slice(0,10);
+    }
+  }
   Event.init({
     name: DataTypes.STRING,
     schedule: DataTypes.DATE,
@@ -17,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {sequelize, modelName: 'Event'});
   Event.associate = function(models) {
     // associations can be defined here
-    Event.belongsToMany(models.Customer, {through: 'CustomerEvent', foreignKey: 'EventId'})
+    Event.belongsToMany(models.Customer, {through: 'CustomerEvent'})
   };
   return Event;
 };
