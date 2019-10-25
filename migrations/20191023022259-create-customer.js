@@ -23,9 +23,6 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
-      login_status: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

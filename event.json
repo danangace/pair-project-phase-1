@@ -1,18 +1,42 @@
 [
   {
-    "name": "Konser BlackPink",
-    "schedule": "2019-11-11",
+    "name": "HAIRSPRAY – The Broadway Musical (SHOW 2)",
+    "description": "Teman Teater Musikal Nusantara - Hairspray The Broadway Musical",
+    "schedule": "2019-12-22",
     "status": "open",
-    "price": "500000",
-    "stock": "1000",
-    "venue": "ICE BSD"
+    "price": "297500",
+    "maxSeats": "1000",
+    "image": "https://static.tiket.photos/image/upload/v1571883027/eventConvertedImages/2019/10/24/51cd37ad-b61e-4eb3-acd8-dd8add746ee7-1571883026647-23c3edd0bb7ef0452076694d3e7083eb.jpg",
+    "venue": "Ciputra Artpreneur, Retail Podium, RT.18/RW.4, Kuningan, Karet Kuningan, South Jakarta City, Jakarta, Indonesia"
   },
   {
-    "name": "Konser BigBang",
-    "schedule": "2019-12-12",
+    "name": "Steroids Line-Up",
+    "description": "Steroids-2 Featuring Maliq D'Esssentials, TULUS, the groove, the Panturas, BARASUARA",
+    "schedule": "2019-11-23",
     "status": "open",
-    "price": "300000",
-    "stock": "1500",
-    "venue": "ICE BSD"
+    "price": "110000",
+    "maxSeats": "2000",
+    "image": "https://static.tiket.photos/image/upload/v1569506279/eventConvertedImages/2019/09/26/58dbfea7-a1c8-484e-af24-bd4407a3c695-1569506278693-1c32271bf12a22a5c7cdb35031acffb4.png",
+    "venue": "Lapangan Pusenif, Jalan Terusan Katamso, Cihaur Geulis, Bandung City, West Java, Indonesia"
+  },
+  {
+    "name": "MOTOGP SEPANG MALAYSIA 2019",
+    "description": "SHELL Malaysia Motorcycle Grand Prix",
+    "schedule": "2019-11-01",
+    "status": "open",
+    "price": "550000",
+    "maxSeats": "1500",
+    "image": "https://static.tiket.photos/image/upload/v1571043332/eventConvertedImages/2019/10/14/c7722e0b-cb9e-4722-9bbf-f666dc8a68a0-1571043331276-8b9650389758883683fb9899bfa17090.jpg",
+    "venue": "Seating Area, 342, Sepang F1 Circuit, 64000 Sepang, Selangor, Malaysia"
+  },
+  {
+    "name": "Blues International Festival",
+    "description": "Jakarta Blues International Festival",
+    "schedule": "2019-12-07",
+    "status": "open",
+    "price": "575000",
+    "maxSeats": "1500",
+    "image": "https://static.tiket.photos/image/upload/v1567068901/eventConvertedImages/2019/08/29/a814c7c2-4158-49bb-8e84-8f7a83343283-1567068900250-f87b06b7de653007e3c789d84061d5b8.jpg",
+    "venue": "Tennis Indoor Stadium, Jalan Pintu Satu Senayan, RT.1/RW.3, Gelora, Central Jakarta City, Jakarta, Indonesia"
   }
-]
+ ]

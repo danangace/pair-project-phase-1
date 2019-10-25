@@ -1,12 +1,27 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes');
+const session = require('express-session');
+const HomeRoute = require('./routes');
+const EventRoute = require('./routes/EventRoute.js');
+const CustomerRoute = require('./routes/CustomerRoute.js');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 4000;
 
 app.set('view engine', 'ejs');
 
+app.use(cookieParser());
+app.use(session({
+    secret: 'tetapsemangat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+   }))
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/', routes);
+app.use('/home', HomeRoute);
+app.use('/customers', CustomerRoute);
+app.use('/events', EventRoute);
 
-app.listen(3000, () => 'Listening on port: 3000');
+app.listen(PORT, () => 'Listening on port: 3000');
